@@ -15,5 +15,5 @@ inputs:
     required: false
     default: '30000'
 runs:
-  using: 'latest'
+  using: 'node22'
   main: 'index.js'
