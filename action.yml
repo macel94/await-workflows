@@ -8,7 +8,7 @@ inputs:
       whose *latest* runs you want to await.
     required: true
   token:
-    description: 'GitHub token (usually `${{ secrets.GITHUB_TOKEN }}`)'
+    description: 'GitHub token'
     required: true
   poll-interval:
     description: 'How often (in ms) to re-check each run’s status'
