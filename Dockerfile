@@ -1,6 +1,6 @@
 FROM node:24-alpine
-WORKDIR /github/workspace
+WORKDIR /app
 COPY package.json index.js ./
 RUN npm install
 COPY . .
-ENTRYPOINT ["node", "index.js"]
+ENTRYPOINT ["node", "/app/index.js"]
