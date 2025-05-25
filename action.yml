@@ -1,0 +1,19 @@
+name: 'Await Workflows'
+description: 'Wait for the latest runs of one or more workflows to finish before proceeding'
+author: 'Macellaio94'
+inputs:
+  workflows:
+    description: |
+      A comma- or newline-separated list of workflow file names or IDs
+      whose *latest* runs you want to await.
+    required: true
+  token:
+    description: 'GitHub token (usually `${{ secrets.GITHUB_TOKEN }}`)'
+    required: true
+  poll-interval:
+    description: 'How often (in ms) to re-check each run’s status'
+    required: false
+    default: '30000'
+runs:
+  using: 'latest'
+  main: 'index.js'
