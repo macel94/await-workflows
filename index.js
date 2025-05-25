@@ -17,7 +17,7 @@ async function run() {
 
   for (const wf of workflows) {
     // 1) grab the *latest* run for this workflow (file name or ID) 
-    const { data: runs } = await octokit.actions.listWorkflowRunsForWorkflow({
+    const { data: runs } = await octokit.rest.actions.listWorkflowRuns({
       owner,
       repo,
       workflow_id: wf,
@@ -35,7 +35,7 @@ async function run() {
     let status = run.status;
     while (['queued', 'in_progress'].includes(status)) {
       await new Promise(res => setTimeout(res, interval));
-      const { data: updated } = await octokit.actions.getWorkflowRun({
+      const { data: updated } = await octokit.rest.actions.getWorkflowRun({
         owner,
         repo,
         run_id: run.id
