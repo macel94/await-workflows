@@ -1,5 +1,5 @@
 FROM node:24-alpine
-WORKDIR /usr/src/app
+WORKDIR /github/workspace
 COPY package.json index.js ./
 RUN npm install
 COPY . .
